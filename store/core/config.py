@@ -2,12 +2,14 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-  PROJECT_NAME: str = "Store API"
-  ROOT_PATH: str = ""
+    PROJECT_NAME: str = "Store API"
+    ROOT_PATH: str = ""
 
-  DATABASE_URL: str
+    DATABASE_URL: str
 
-  model_config = SettingsConfigDict(env_file=".env")
+    model_config = SettingsConfigDict(env_file=".env")
 
 
 settings = Settings()
+
+print(settings.DATABASE_URL)
