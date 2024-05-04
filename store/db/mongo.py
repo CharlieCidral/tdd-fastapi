@@ -4,8 +4,6 @@ from store.core.config import settings
 
 class MongoClient:
     def __init__(self) -> None:
-        # Imprimir a URI do banco de dados ao inicializar
-        print(settings.DATABASE_URL)
         self.client: AsyncIOMotorClient = AsyncIOMotorClient(settings.DATABASE_URL)
 
     def get(self) -> AsyncIOMotorClient:
